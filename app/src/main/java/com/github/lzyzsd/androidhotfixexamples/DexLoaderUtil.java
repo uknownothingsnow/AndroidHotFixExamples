@@ -26,6 +26,14 @@ public class DexLoaderUtil {
     public static final String THIRD_DEX_NAME = "lib2.apk";
     private static final int BUF_SIZE = 8 * 1024;
 
+    public static String getDexPath(Context context, String dexName) {
+        return new File(context.getDir("dex", Context.MODE_PRIVATE), dexName).getAbsolutePath();
+    }
+
+    public static String getOptimizedDexPath(Context context) {
+        return context.getDir("outdex", Context.MODE_PRIVATE).getAbsolutePath();
+    }
+
     public static void copyDex(Context context, String dexName) {
         File dexInternalStoragePath = new File(context.getDir("dex", Context.MODE_PRIVATE),
                 dexName);
@@ -92,7 +100,6 @@ public class DexLoaderUtil {
             Object dexElements = combineArray(
                     getDexElements(getPathList(pathClassLoader)),
                     getDexElements(getPathList(dexClassLoader)));
-
 
             Object pathList = getPathList(pathClassLoader);
             setField(pathList, pathList.getClass(), "dexElements", dexElements);
