@@ -4,7 +4,7 @@ Most code copy from [https://github.com/simpleton/dalvik_patch](https://github.c
 
 ## HotFix Projects
 
-下面的两个方案都是参考了[腾讯QZone的方案](http://bugly.qq.com/blog/?p=781)
+下面的两个方案都是参考了[腾讯QZone的方案](https://zhuanlan.zhihu.com/p/20308548)
 
 百度的同学的实现 [HotFix](https://github.com/dodola/HotFix)
 
